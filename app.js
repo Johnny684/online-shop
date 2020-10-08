@@ -2,8 +2,10 @@ const express = require("express"),
       app = express();
 
 app.set("view engine","ejs");
-app.get("/", (req,res,next)=>{
+app.get("/", function(req,res){
     res.render("index");
 });
 
-app.listen(process.env.port || 3000);
+app.listen(process.env.port || 3000, function() { 
+    console.log('App has started!'); 
+});
